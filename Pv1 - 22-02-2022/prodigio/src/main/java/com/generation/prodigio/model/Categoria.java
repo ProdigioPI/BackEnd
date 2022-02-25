@@ -17,11 +17,11 @@ public class Categoria {
 	private Long id; 
 	
 	@NotBlank(message="Este campo é obrigatório.")
-	@Size(min=5, max=255, message="Este campo deverá ter o máximo de 20 caracteres.")
+	@Size(min=1, max=255, message="Este campo deverá ter o máximo de 20 caracteres.")
 	private String materia; /*Puxa o assunto que quer estudar.*/
 	
 	@NotBlank(message="Este campo é obrigatório.")
-	@Size(min=5, max=255, message="Este campo deverá ter o máximo de 20 caracteres.")
+	@Size(min=1, max=255, message="Este campo deverá ter o máximo de 20 caracteres.")
 	private String areaDeEstudo; /*Puxa o conteudo a ser estudado*/
 
 	public Long getId() {
