@@ -27,44 +27,41 @@ public class CategoriaController {
 	
 	@Autowired
 	private CategoriaRepository categoriaRepository;
-
 	
-	
-	@GetMapping
+	@GetMapping /*Listar todas as Categorias*/
 	public ResponseEntity<List <Categoria >> getAll() { 
 		return ResponseEntity.ok(categoriaRepository.findAll());
-}
-
+	}	
 	
-	@GetMapping("/{id}")	
+	@GetMapping("/{id}")	/*Listar todas Categorias por ID*/
 	public ResponseEntity<Categoria > getById(@PathVariable Long id) { 
 			return categoriaRepository.findById(id) 
 					.map(resposta -> ResponseEntity.ok(resposta)) 
 					.orElse(ResponseEntity.notFound().build());
-}
+	}
 
-	@GetMapping("/materia/{materia}")
+	@GetMapping("/materia/{materia}") /*Listar Categoria atravez do nome*/
 	public ResponseEntity<List<Categoria>> getByDescricao(@PathVariable String materia) {
 		return ResponseEntity.ok(categoriaRepository.findAllByMateriaContainingIgnoreCase(materia));
 	}
 
-	@PostMapping
+	@PostMapping /*Para Criar uma nova categoria*/
 	public ResponseEntity<Categoria> postCategoria(@Valid @RequestBody Categoria categoria) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(categoriaRepository.save(categoria));
 	}
 
-	@PutMapping
+	@PutMapping /*Para atualizar uma categoria existente*/
 	public ResponseEntity<Categoria> putCategoria(@Valid @RequestBody Categoria categoria) {
 		return categoriaRepository.findById(categoria.getId()).map(resposta -> {
-			return ResponseEntity.ok().body(categoriaRepository.save(categoria));
-		}).orElse(ResponseEntity.notFound().build());
+			return ResponseEntity.ok().body(categoriaRepository.save(categoria));})
+				.orElse(ResponseEntity.notFound().build());
 	}
 	
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/{id}") /*Para Deletar uma categoria por ID*/
 	public ResponseEntity<?> deleteCategoria(@PathVariable Long id) {
 		return categoriaRepository.findById(id).map(resposta -> {
 			categoriaRepository.deleteById(id);
-			return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-		}).orElse(ResponseEntity.notFound().build());
+			return ResponseEntity.status(HttpStatus.NO_CONTENT).build();})
+				.orElse(ResponseEntity.notFound().build());
 	}
 }
