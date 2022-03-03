@@ -28,6 +28,10 @@ public class Usuario {
 	@Size(max=255)
 	private String senha;
 	
+	@NotBlank
+	@Size(max=1)// TODO Subtituir por TRUE ou FALSE no FRONTEND.
+	private String tipo;
+	
 	private String foto;
 
 	public Long getId() {

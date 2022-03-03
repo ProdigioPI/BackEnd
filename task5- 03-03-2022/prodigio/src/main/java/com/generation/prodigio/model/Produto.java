@@ -31,7 +31,7 @@ public class Produto {
 	private String descricao;
 	
 	@NotBlank
-	private String agenda;
+	private String agenda;// 03/03 ate 09/03 ->> Anexar(Vincular) o Link da agenda do GOOGLE no FRONTEND
 	
 	@NotNull
 	@Positive(message="O valor tem que ser maior que R$ 00.00")
