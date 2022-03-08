@@ -28,7 +28,7 @@ public class CategoriaController {
 	@Autowired
 	private CategoriaRepository categoriaRepository;
 	
-	@GetMapping /*Listar todas as Categorias*/
+	@GetMapping("/all") /*Listar todas as Categorias*/
 	public ResponseEntity<List <Categoria >> getAll() { 
 		return ResponseEntity.ok(categoriaRepository.findAll());
 	}	
