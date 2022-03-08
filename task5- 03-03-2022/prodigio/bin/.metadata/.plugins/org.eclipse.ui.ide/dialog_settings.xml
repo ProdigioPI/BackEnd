@@ -50,6 +50,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\user\Desktop\Javaverse\projectIntegrador\task5- 03-03-2022\prodigio"/>
 			<item value="C:\Users\felip\OneDrive\Área de Trabalho\Projeto Integrador\Pv1 - 22-02-2022\prodigio"/>
 			<item value="C:\Users\felip\OneDrive\Área de Trabalho\Projeto Integrador\Pv1 - 22-02-2022"/>
 		</list>
