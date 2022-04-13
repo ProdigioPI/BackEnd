@@ -44,6 +44,11 @@ public class ProdutoController {
     public ResponseEntity<List<Produto>> getByDescricao(@PathVariable String nomeMateria) {
         return ResponseEntity.ok(produtosRepository.findAllByNomeMateriaContainingIgnoreCase(nomeMateria));
     }
+    
+    @GetMapping("/materia/{materia}") /*Listar Produtos atravez do nome*/
+    public ResponseEntity<List<Produto>> geProdutoPorMateria(@PathVariable Long materia) {
+        return ResponseEntity.ok(produtosRepository.getProdutPorMateria(materia));
+    }
 
     @PostMapping /*Para Criar um novo produto*/
     public ResponseEntity<Produto> postCategoria(@Valid @RequestBody Produto produto) {
